@@ -15,6 +15,6 @@ WHERE
     foi:code ?code ;
     <http://statistics.data.gov.uk/def/statistical-geography#status> ?status .
 
-FILTER (?status = "Live")
+FILTER (?status = 'Live')
 
 }
