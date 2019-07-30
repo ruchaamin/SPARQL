@@ -1,7 +1,7 @@
 PREFIX foi: <http://publishmydata.com/def/ontology/foi/>
 PREFIX rdf: <http://www.w3.org/2000/01/rdf-schema#>
 
-SELECT ?name ?code
+SELECT ?name ?code 
 WHERE
 {
 	VALUES ?value
@@ -12,6 +12,9 @@ WHERE
 
  ?s foi:memberOf ?value ;
     rdf:label ?name ;
-    foi:code ?code .
+    foi:code ?code ;
+    <http://statistics.data.gov.uk/def/statistical-geography#status> ?status .
+
+FILTER (?status = "Live")
 
 }
