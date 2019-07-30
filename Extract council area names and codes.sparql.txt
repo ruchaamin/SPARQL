@@ -1,0 +1,12 @@
+PREFIX foi: <http://publishmydata.com/def/ontology/foi/>
+PREFIX rdf: <http://www.w3.org/2000/01/rdf-schema#>
+
+
+SELECT ?name ?code
+
+WHERE {
+  ?s foi:memberOf <http://statistics.gov.scot/def/foi/collection/council-areas> ;
+     rdf:label ?name ;
+     foi:code ?code .
+}
+
