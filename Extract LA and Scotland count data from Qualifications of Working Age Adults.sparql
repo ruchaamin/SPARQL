@@ -18,4 +18,4 @@ SELECT ?Year ?AreaName ?Qualification ?Figure
                     ?qual1 rdfs:label ?Qualification.                    
                   }
                     
-ORDER BY ?Year ?AreaName ?Qualification  ## Ordering the table
+ORDER BY ?Year ?AreaName ?Qualification 
