@@ -1,0 +1,21 @@
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX foi: <http://publishmydata.com/def/ontology/foi/>
+
+SELECT ?Year ?AreaName ?Destination ?Figure
+         WHERE {
+			VALUES ?places { <http://statistics.gov.scot/def/foi/collection/council-areas> <http://statistics.gov.scot/def/foi/collection/countries>}
+			
+                    ?obs  <http://purl.org/linked-data/cube#dataSet> <http://statistics.gov.scot/data/exports-by-local-authority>; ## Getting to the dataset
+                    <http://statistics.gov.scot/def/measure-properties/count> ?Figure;  ##Getting the Count Data for Economic Activity
+                    <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ?Area; ## Getting the Area Names
+                    <http://purl.org/linked-data/sdmx/2009/dimension#refPeriod> ?Year1; ## Getting the Year Information 
+                    <http://statistics.gov.scot/def/dimension/exportDestination> ?dest1. ## Getting the Destination Information
+                    
+					?Area foi:memberOf ?places .
+					
+					?Area rdfs:label ?AreaName.
+                    ?Year1 rdfs:label ?Year.
+                    ?dest1 rdfs:label ?Destination.
+				}
+
+ ORDER BY ?Year ?AreaName ?Destination ## Ordering the table
