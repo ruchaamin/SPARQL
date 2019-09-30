@@ -5,11 +5,11 @@ SELECT ?Year ?AreaName ?Qualification ?Figure
 	WHERE {
 		VALUES ?places { <http://statistics.gov.scot/def/foi/collection/council-areas> <http://statistics.gov.scot/def/foi/collection/countries>}
 	
-                    ?obs <http://purl.org/linked-data/cube#dataSet> <http://statistics.gov.scot/data/qualifications-working-age-people>; ## Getting to the dataset
-                    <http://statistics.gov.scot/def/measure-properties/count> ?Figure;  ##Getting the Count Data for Economic Activity
-                    <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ?Area; ## Getting the Area Names
-                    <http://purl.org/linked-data/sdmx/2009/dimension#refPeriod> ?Year1;  ## Getting the Year Information 
-                    <http://statistics.gov.scot/def/dimension/qualification> ?qual1. ## Getting qualification information
+                    ?obs <http://purl.org/linked-data/cube#dataSet> <http://statistics.gov.scot/data/qualifications-working-age-people>; 
+                    <http://statistics.gov.scot/def/measure-properties/count> ?Figure;  
+                    <http://purl.org/linked-data/sdmx/2009/dimension#refArea> ?Area; 
+                    <http://purl.org/linked-data/sdmx/2009/dimension#refPeriod> ?Year1;  
+                    <http://statistics.gov.scot/def/dimension/qualification> ?qual1. 
  					
   					?Area foi:memberOf ?places .
                    
